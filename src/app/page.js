@@ -1,65 +1,60 @@
-import Image from "next/image";
+// app/page.js (最終版 - 移除倒數日邏輯，新增獨立連結)
+import Link from 'next/link';
 
-export default function Home() {
+// 頁面連結配置
+const directoryLinks = [
+  { href: '/submit', title: '🖊️ 前往匿名投稿', description: '發表您的文字或圖片內容' },
+  { href: '/status', title: '🔍 查詢稿件狀態', description: '憑臨時用戶名和 ID 追蹤進度' },
+  { href: '/delete-request', title: '🗑️ 請求刪除稿件', description: '提交刪除已投稿內容的申請' },
+  { href: '/guidelines', title: '📄 投稿規範', description: '查閱平台的發文規定與守則' }, 
+  // 💡 新增：倒數日頁面連結
+  { href: '/countdown', title: '🗓️ 查看倒數日', description: '查看平台目前設定的公開倒數日' }, 
+];
+
+export default function DirectoryPage() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
+      
+      {/* 標題區 */}
+      <header className="text-center mb-10">
+        <h1 className="text-4xl font-extrabold text-indigo-700 mb-2">
+          校園內容策展平台
+        </h1>
+        <p className="text-lg text-gray-500">
+          請選擇您要進行的操作
+        </p>
+      </header>
+      
+      {/* 目錄連結卡片 */}
+      <main className="w-full max-w-lg space-y-4">
+        {directoryLinks.map((link) => (
+          <Link 
+            key={link.href} 
+            href={link.href}
+            className="block p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.01] border border-gray-100"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+            <h2 className="text-xl font-semibold text-gray-800 mb-1">
+              {link.title}
+            </h2>
+            <p className="text-sm text-gray-500">
+              {link.description}
+            </p>
+          </Link>
+        ))}
       </main>
+
+      {/* 底部資訊區 */}
+      <footer className="mt-10 text-center">
+        {/* 管理員登入連結 */}
+        <Link href="/admin/login" className="text-sm text-gray-400 hover:text-indigo-600 transition">
+          管理員登入
+        </Link>
+        <p className="text-xs text-gray-400 mt-2">
+          © {currentYear} 校園內容策展平台. All rights reserved.
+        </p>
+      </footer>
     </div>
   );
 }

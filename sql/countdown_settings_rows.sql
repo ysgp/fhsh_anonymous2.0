@@ -1,0 +1,1 @@
+INSERT INTO "public"."countdown_settings" ("id", "event_name", "target_date", "is_active", "updated_at") VALUES ('ad1bf962-ec4f-49aa-9e93-64fdc834739b', '校慶倒數', '2025-11-15', 'true', '2025-11-13 10:55:35.306+00');
