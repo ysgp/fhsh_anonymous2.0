@@ -44,7 +44,7 @@ export default function SubmitPage() {
     e.preventDefault();
 
     if (!content || !username) {
-      alert('請填寫投稿內容和您的臨時用戶名。');
+      alert('請填寫投稿內容和您的班級座號。');
       return;
     }
     
@@ -124,7 +124,7 @@ export default function SubmitPage() {
             您的投稿 ID 是：<span className="text-indigo-600 font-extrabold break-all">{submissionResult.postId}</span>
           </p>
           <p className="text-sm text-red-500 mb-6">
-            請務必記下您的 **臨時用戶名** 和此 **投稿 ID**，這是您未來查詢狀態的唯一憑證。
+            你可以透過班級座號查看審核進度
           </p>
           <Link href="/" className="text-indigo-500 hover:text-indigo-700 font-medium transition duration-150">
             返回主目錄
@@ -171,14 +171,14 @@ export default function SubmitPage() {
           {/* 臨時用戶名 */}
           <div>
             <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-1">
-              臨時用戶名 (必填，30天有效)
+              班級座號(不公開資訊，請誠實填寫)
             </label>
             <input
               type="text"
               id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="輸入一個用於查詢狀態的名稱"
+              placeholder="不公開資訊，請誠實填寫"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 text-gray-900" // <--- 修正文字顏色
               required
             />

@@ -4,7 +4,7 @@ import Link from 'next/link';
 // 頁面連結配置
 const directoryLinks = [
   { href: '/submit', title: '🖊️ 前往匿名投稿', description: '發表您的文字或圖片內容' },
-  { href: '/status', title: '🔍 查詢稿件狀態', description: '憑臨時用戶名和 ID 追蹤進度' },
+  { href: '/status', title: '🔍 查詢稿件狀態', description: '憑班級座號查詢追蹤進度' },
   { href: '/delete-request', title: '🗑️ 請求刪除稿件', description: '提交刪除已投稿內容的申請' },
   { href: '/guidelines', title: '📄 投稿規範', description: '查閱平台的發文規定與守則' }, 
   // 💡 新增：倒數日頁面連結
@@ -20,7 +20,7 @@ export default function DirectoryPage() {
       {/* 標題區 */}
       <header className="text-center mb-10">
         <h1 className="text-4xl font-extrabold text-indigo-700 mb-2">
-          校園內容策展平台
+          復興高中匿名投稿平台2.0
         </h1>
         <p className="text-lg text-gray-500">
           請選擇您要進行的操作
@@ -52,7 +52,7 @@ export default function DirectoryPage() {
           管理員登入
         </Link>
         <p className="text-xs text-gray-400 mt-2">
-          © {currentYear} 校園內容策展平台. All rights reserved.
+          © {currentYear} 復興高中匿名投稿平台. All rights reserved.
         </p>
       </footer>
     </div>
