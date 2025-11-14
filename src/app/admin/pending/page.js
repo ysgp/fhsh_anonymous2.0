@@ -146,7 +146,8 @@ export default function PendingReviewPage() {
 
                 <div className="mb-4">
                     <p className="text-sm font-medium text-gray-700">臨時用戶名:</p>
-                    <p className="text-xl font-bold text-indigo-600">{post.username}</p>
+                    {/* 🚨 修正：將 post.username 改為 post.temporary_username */}
+                    <p className="text-xl font-bold text-indigo-600">{post.temporary_username}</p>
                 </div>
 
                 <div className="mb-4">
@@ -196,4 +197,5 @@ export default function PendingReviewPage() {
       )}
     </div>
   );
+
 }
