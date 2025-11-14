@@ -41,7 +41,7 @@ export default function StatusPage() {
     e.preventDefault();
 
     if (!username) {
-      setError('請輸入您的臨時用戶名。');
+      setError('請輸入您的班級座號。');
       return;
     }
 
@@ -62,7 +62,7 @@ export default function StatusPage() {
       }
       
       if (!data || data.length === 0) {
-        setError(`找不到與用戶名 "${username}" 相關的投稿紀錄。`);
+        setError(`找不到 "${username}" 相關的投稿紀錄。`);
         return;
       }
 
@@ -94,7 +94,7 @@ export default function StatusPage() {
         <header className="mb-8 text-center">
           <h1 className="text-3xl font-bold text-gray-800">🔍 稿件狀態查詢</h1>
           <p className="text-sm text-gray-500 mt-2">
-            請輸入您投稿時設定的臨時用戶名，系統將列出所有相關投稿。
+            請輸入您投稿時設定的班級座號，系統將列出所有相關投稿。
           </p>
         </header>
 
@@ -111,14 +111,14 @@ export default function StatusPage() {
           {/* 臨時用戶名 */}
           <div>
             <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-1">
-              臨時用戶名
+            班級座號
             </label>
             <input
               type="text"
               id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="投稿時輸入的名稱"
+              placeholder="投稿時輸入的班級座號"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
               required
             />

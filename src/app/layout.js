@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "復興高中匿名投稿系統2.0",
-  description: "這是一個適用於復興高中的匿名投稿系統，由YK工作室開發",
+  title: "匿名復興投稿系統2.0",
+  description: "適用於復興高中的匿名投稿系統",
 };
 
 export default function RootLayout({ children }) {

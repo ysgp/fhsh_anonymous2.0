@@ -147,7 +147,7 @@ export default function SubmitPage() {
         <header className="mb-8 text-center">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">匿名投稿</h1>
           <p className="text-sm text-red-500">
-            您的投稿將經過審核，並可能被發佈到校方 IG 帳號。
+            您的投稿將經過審核，並發佈到匿名復興的IG帳號。
           </p>
           <Link href="/submit-guide" className="text-sm text-indigo-500 hover:text-indigo-700 transition duration-150 mt-1 block">
                 → 點擊查看投稿規範 ←

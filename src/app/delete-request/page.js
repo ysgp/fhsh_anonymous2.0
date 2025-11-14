@@ -165,6 +165,12 @@ export default function DeleteRequestPage() {
         {getStatusDisplay()}
         
       </div>
+
+      <div className="mt-6 text-center">
+            <Link href="/" className="text-sm text-indigo-500 hover:text-indigo-700 transition duration-150">
+                返回目錄
+            </Link>
+        </div>
     </div>
   );
 }
