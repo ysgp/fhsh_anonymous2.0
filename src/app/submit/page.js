@@ -149,7 +149,7 @@ export default function SubmitPage() {
           <p className="text-sm text-red-500">
             您的投稿將經過審核，並發佈到匿名復興的IG帳號。
           </p>
-          <Link href="/submit-guide" className="text-sm text-indigo-500 hover:text-indigo-700 transition duration-150 mt-1 block">
+          <Link href="/guidelines" className="text-sm text-indigo-500 hover:text-indigo-700 transition duration-150 mt-1 block">
                 → 點擊查看投稿規範 ←
           </Link>
         </header>
@@ -235,4 +235,5 @@ export default function SubmitPage() {
       </motion.div>
     </div>
   );
+
 }
