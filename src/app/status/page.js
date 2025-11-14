@@ -18,15 +18,20 @@ const formatTimestamp = (timestamp) => {
 const getStatusColor = (status) => {
     switch (status) {
       case 'pending':
-        return 'bg-yellow-100 text-yellow-800 border-yellow-300';
+        // 保持之前修改的深色文字
+        return 'bg-yellow-100 text-gray-900 border-yellow-300';
       case 'approved':
-        return 'bg-blue-100 text-blue-800 border-blue-300';
+        // 保持之前修改的深色文字
+        return 'bg-blue-100 text-gray-900 border-blue-300';
       case 'rejected':
-        return 'bg-red-100 text-red-800 border-red-300';
+        // 保持之前修改的深色文字
+        return 'bg-red-100 text-gray-900 border-red-300';
       case 'published':
-        return 'bg-green-100 text-green-800 border-green-300';
+        // 保持之前修改的深色文字
+        return 'bg-green-100 text-gray-900 border-green-300';
       default:
-        return 'bg-gray-100 text-gray-600 border-gray-300';
+        // 保持之前修改的深色文字
+        return 'bg-gray-100 text-gray-900 border-gray-300';
     }
   };
 
@@ -119,7 +124,8 @@ export default function StatusPage() {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder="投稿時輸入的班級座號"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
+              // *** 這裡新增了 text-gray-900 樣式，確保輸入文字是深灰色（接近黑色） ***
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"
               required
             />
           </div>
