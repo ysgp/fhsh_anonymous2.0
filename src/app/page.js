@@ -20,7 +20,7 @@ export default function DirectoryPage() {
       {/* 標題區 */}
       <header className="text-center mb-10">
         <h1 className="text-4xl font-extrabold text-indigo-700 mb-2">
-          復興高中匿名投稿平台2.0
+          匿名復興投稿平台2.0
         </h1>
         <p className="text-lg text-gray-500">
           請選擇您要進行的操作
