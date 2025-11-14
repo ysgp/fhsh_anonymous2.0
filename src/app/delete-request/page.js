@@ -1,9 +1,10 @@
-// app/delete-request/page.js (最終修正版 - 確保文字為黑色)
+// app/delete-request/page.js
 'use client';
 
 import { useState } from 'react';
 import { supabase } from '@/lib/supabase/client';
-import Link from 'next/link';
+// 🚨 修正 1: 導入 Link 元件
+import Link from 'next/link'; 
 
 export default function DeleteRequestPage() {
   const [formData, setFormData] = useState({
@@ -81,7 +82,10 @@ export default function DeleteRequestPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-start justify-center py-12 px-4 sm:px-6 lg:px-8">
+    // 🚨 修正 2: 變更外層容器為 flex-col，確保內容垂直堆疊
+    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-start py-12 px-4 sm:px-6 lg:px-8">
+      
+      {/* 主要內容區塊 (表單) */}
       <div className="max-w-xl w-full space-y-8 bg-white p-10 rounded-xl shadow-2xl">
         <header>
           <h2 className="text-3xl font-extrabold text-gray-900 text-center">
@@ -108,7 +112,6 @@ export default function DeleteRequestPage() {
                 onChange={handleChange}
                 disabled={status === 'loading'}
                 required
-                // 修正：確保輸入的文字為黑色
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 text-base text-gray-900" 
                 placeholder="https://www.instagram.com/p/XXXXXX"
               />
@@ -127,7 +130,6 @@ export default function DeleteRequestPage() {
                 onChange={handleChange}
                 disabled={status === 'loading'}
                 required
-                // 修正：確保輸入的文字為黑色
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 text-base text-gray-900"
                 placeholder="@your_ig_handle"
               />
@@ -146,7 +148,6 @@ export default function DeleteRequestPage() {
                 onChange={handleChange}
                 disabled={status === 'loading'}
                 required
-                // 修正：確保輸入的文字為黑色
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 text-base text-gray-900"
                 placeholder="請簡述您要求刪除的原因..."
               ></textarea>
@@ -166,13 +167,14 @@ export default function DeleteRequestPage() {
         {getStatusDisplay()}
         
       </div>
-
+      
+      {/* 🚨 修正 2: Link 現在在表單區塊下方，位於外層 flex-col 容器內，實現底部排版 */}
       <div className="mt-6 text-center">
             <Link href="/" className="text-sm text-indigo-500 hover:text-indigo-700 transition duration-150">
                 返回目錄
             </Link>
-        </div>
+      </div>
+      
     </div>
   );
-
 }
