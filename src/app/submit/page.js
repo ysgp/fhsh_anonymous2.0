@@ -171,14 +171,14 @@ export default function SubmitPage() {
           {/* 臨時用戶名 */}
           <div>
             <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-1">
-              臨時名稱(僅供查詢狀態)
+              班級座號(不公開資訊，請誠實填寫)
             </label>
             <input
               type="text"
               id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="供查詢狀態"
+              placeholder="不公開資訊，請誠實填寫"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 text-gray-900" // <--- 修正文字顏色
               required
             />
@@ -237,4 +237,3 @@ export default function SubmitPage() {
   );
 
 }
-

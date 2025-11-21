@@ -4,7 +4,7 @@ import Link from 'next/link';
 // 頁面連結配置
 const directoryLinks = [
   { href: '/submit', title: '🖊️ 前往匿名投稿', description: '發表您的文字或圖片內容' },
-  { href: '/status', title: '🔍 查詢稿件狀態', description: '憑臨時名稱查詢追蹤進度' },
+  { href: '/status', title: '🔍 查詢稿件狀態', description: '憑班級座號查詢追蹤進度' },
   { href: '/delete-request', title: '🗑️ 請求刪除稿件', description: '提交刪除已投稿內容的申請' },
   { href: '/guidelines', title: '📄 投稿規範', description: '查閱平台的發文規定與守則' }, 
   // 💡 新增：倒數日頁面連結
